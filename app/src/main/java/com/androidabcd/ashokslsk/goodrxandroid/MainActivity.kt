@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun createRange(): Observable<Int>{
-        return Observable.range(40,10)
+        return Observable.range(1,5).repeat(3)
     }
+
+
 }

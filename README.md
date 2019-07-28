@@ -150,7 +150,43 @@ Range Operator :
     }
 
 // output
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 40
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 41
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 42
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 43
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 44
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 45
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 46
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 47
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 48
+2019-07-28 12:29:32.571 5020-5020/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 49
+
 ```
 
 
+
+Repeat operator : 
+
+```kotlin
+private fun createRange(): Observable<Int>{
+        return Observable.range(1,5).repeat(3)
+    }
+
+//output
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 1
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 2
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 3
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 4
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 5
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 1
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 2
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 3
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 4
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 5
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 1
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 2
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 3
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 4
+2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 5
+```
 
