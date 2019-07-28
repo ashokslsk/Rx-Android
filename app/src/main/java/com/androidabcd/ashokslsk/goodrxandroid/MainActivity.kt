@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         createFilter().subscribe{
             data-> Log.d("mainfilter", "filtered "+data)
         }
+
+        createTakeLast().subscribe{
+            data -> Log.d("maintakelast","Last "+data)
+        }
     }
 
     private fun showJustJob(){
@@ -70,5 +74,9 @@ class MainActivity : AppCompatActivity() {
             .filter{data-> data > 2}
     }
 
+    private fun createTakeLast() : Observable<Int>{
+        return Observable.just(1,2,4,6,8,9,11)
+            .takeLast(2)
+    }
 
 }

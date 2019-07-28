@@ -267,3 +267,16 @@ createFilter().subscribe{
 2019-07-28 12:51:25.194 5647-5647/? D/mainfilter: filtered 11
 ```
 
+TakeLast operator
+
+```kotlin
+private fun createTakeLast() : Observable<Int>{
+        return Observable.just(1,2,4,6,8,9,11)
+            .takeLast(2)
+    }
+    
+    createTakeLast().subscribe{
+            data -> Log.d("maintakelast","Last "+data)
+        }
+```
+
