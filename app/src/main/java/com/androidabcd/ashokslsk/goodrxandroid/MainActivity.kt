@@ -30,6 +30,14 @@ class MainActivity : AppCompatActivity() {
         createInterval().subscribe{
             ash-> Log.d("mainintervral", "intervals"+ ash)
         }
+
+        createTimer().subscribe{
+            data-> println("Food is ready after"+ data)
+        }
+
+        createFilter().subscribe{
+            data-> Log.d("mainfilter", "filtered "+data)
+        }
     }
 
     private fun showJustJob(){
@@ -52,5 +60,15 @@ class MainActivity : AppCompatActivity() {
     private fun createInterval(): Observable<Long>{
         return Observable.interval(1, TimeUnit.SECONDS).takeWhile { value-> value < 10 }
     }
+
+    private fun createTimer() : Observable<Long>{
+        return Observable.timer(5, TimeUnit.SECONDS)
+    }
+
+    private fun createFilter() : Observable<Int>{
+        return Observable.just(1,2,4,6,8,9,11)
+            .filter{data-> data > 2}
+    }
+
 
 }

@@ -233,3 +233,37 @@ To stop the stream you can use conditions like while if and so on.
 
 ```
 
+Timer Operator: 
+
+```kotlin
+ private fun createTimer() : Observable<Long>{
+        return Observable.timer(5, TimeUnit.SECONDS)
+    }
+    
+    createTimer().subscribe{
+            data-> println("Food is ready after"+ data)
+        }
+```
+
+
+
+Filter operator : (Satisfies a condition)
+
+```kotlin
+createFilter().subscribe{
+            data-> Log.d("mainfilter", "filtered "+data)
+        }
+        
+        private fun createFilter() : Observable<Int>{
+        return Observable.just(1,2,4,6,8,9,11)
+            .filter{data-> data > 2}
+    }
+    
+    // output
+2019-07-28 12:51:25.194 5647-5647/? D/mainfilter: filtered 4
+2019-07-28 12:51:25.194 5647-5647/? D/mainfilter: filtered 6
+2019-07-28 12:51:25.194 5647-5647/? D/mainfilter: filtered 8
+2019-07-28 12:51:25.194 5647-5647/? D/mainfilter: filtered 9
+2019-07-28 12:51:25.194 5647-5647/? D/mainfilter: filtered 11
+```
+
