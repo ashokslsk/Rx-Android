@@ -190,3 +190,46 @@ private fun createRange(): Observable<Int>{
 2019-07-28 12:33:12.388 5163-5163/com.androidabcd.ashokslsk.goodrxandroid D/mainrange: range 5
 ```
 
+Interval Operator: 
+
+```
+
+        createInterval().subscribe{
+            ash-> Log.d("mainintervral", "intervals"+ ash)
+        }
+        
+        private fun createInterval(): Observable<Long>{
+        return Observable.interval(1, TimeUnit.SECONDS)
+    }
+    
+    //output 
+    2019-07-28 12:38:07.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals51
+2019-07-28 12:38:08.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals52
+2019-07-28 12:38:09.600 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals53
+2019-07-28 12:38:10.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals54
+2019-07-28 12:38:11.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals55
+2019-07-28 12:38:12.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals56
+2019-07-28 12:38:13.600 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals57
+2019-07-28 12:38:14.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals58
+2019-07-28 12:38:15.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals59
+2019-07-28 12:38:16.600 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals60
+2019-07-28 12:38:17.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals61
+2019-07-28 12:38:18.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals62
+2019-07-28 12:38:19.600 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals63
+2019-07-28 12:38:20.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals64
+2019-07-28 12:38:21.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals65
+2019-07-28 12:38:22.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals66
+2019-07-28 12:38:23.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals67
+2019-07-28 12:38:24.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals68
+2019-07-28 12:38:25.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals69
+2019-07-28 12:38:26.601 5252-5314/com.androidabcd.ashokslsk.goodrxandroid D/mainintervral: intervals70
+
+```
+
+To stop the stream you can use conditions like while if and so on. 
+
+```kotlin
+        return Observable.interval(1, TimeUnit.SECONDS).takeWhile { value-> value < 10 }
+
+```
+

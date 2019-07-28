@@ -7,6 +7,7 @@ import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         createRange().subscribe{
             it-> Log.d("mainrange","range "+it)
+        }
+
+        createInterval().subscribe{
+            ash-> Log.d("mainintervral", "intervals"+ ash)
         }
     }
 
@@ -44,5 +49,8 @@ class MainActivity : AppCompatActivity() {
         return Observable.range(1,5).repeat(3)
     }
 
+    private fun createInterval(): Observable<Long>{
+        return Observable.interval(1, TimeUnit.SECONDS).takeWhile { value-> value < 10 }
+    }
 
 }
