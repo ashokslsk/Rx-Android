@@ -43,6 +43,15 @@ Just like Election manifesto RX has its own manifesto that dictates what it can 
         }
 
         dataStream.subscribe(dataObserver)
+
+// output : 
+2019-07-28 12:08:01.863 2585-2585/com.androidabcd.ashokslsk.goodrxandroid I/System.out: new data item is recieved: 10
+2019-07-28 12:08:01.863 2585-2585/com.androidabcd.ashokslsk.goodrxandroid I/System.out: new data item is recieved: 20
+2019-07-28 12:08:01.864 2585-2585/com.androidabcd.ashokslsk.goodrxandroid I/System.out: new data item is recieved: 30
+2019-07-28 12:08:01.864 2585-2585/com.androidabcd.ashokslsk.goodrxandroid I/System.out: new data item is recieved: 40
+2019-07-28 12:08:01.864 2585-2585/com.androidabcd.ashokslsk.goodrxandroid I/System.out: new data item is recieved: 50
+2019-07-28 12:08:01.864 2585-2585/com.androidabcd.ashokslsk.goodrxandroid I/System.out: new data item is recieved: 60
+2019-07-28 12:08:01.864 2585-2585/com.androidabcd.ashokslsk.goodrxandroid I/System.out: All data received from the stream
 ```
 
 The above example illustrates the simplicity of initializing the Data and observables. The above example uses a simple Just operator like as you see but you don't have remember all of the operators cause there is a good documentation available instead you should remember what kind of operator suits your problem and what you should use. 
@@ -53,4 +62,38 @@ The above example illustrates the simplicity of initializing the Data and observ
 - Filtering Operators
 - Combining Operators 
 - Concurrency Operators
+
+
+
+------
+
+Now lets try FromArray operator. 
+
+```kotlin
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        createFromArray().subscribe{
+                arr-> Log.d("main","recieved array is"+Arrays.toString(arr))
+        }
+    }
+
+    private fun showJustJob(){
+
+    }
+
+    private fun createFromArray(): Observable<Array<Int>>{
+        return Observable.fromArray(arrayOf(1, 5, 7,9,11,13,15))
+    }
+
+}
+
+
+//Output : 
+2019-07-28 12:15:29.738 4511-4511/? D/main: recieved array is[1, 5, 7, 9, 11, 13, 15]
+
+```
 
