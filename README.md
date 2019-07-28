@@ -137,3 +137,20 @@ class MainActivity : AppCompatActivity() {
 2019-07-28 12:23:00.168 4852-4852/com.androidabcd.ashokslsk.goodrxandroid D/mainitr: recieved iterated data 8
 ```
 
+Range Operator : 
+
+```kotlin
+ createRange().subscribe{
+            it-> Log.d("mainrange","range "+it)
+        }
+        
+        
+        private fun createRange(): Observable<Int>{
+        return Observable.range(40,10)
+    }
+
+// output
+```
+
+
+

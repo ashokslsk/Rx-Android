@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
         createFromIteratable().subscribe{
             arr-> Log.d("mainitr", "recieved iterated data "+ arr)
         }
+
+        createRange().subscribe{
+            it-> Log.d("mainrange","range "+it)
+        }
     }
 
     private fun showJustJob(){
@@ -33,5 +37,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun createFromIteratable(): Observable<Int>{
         return Observable.fromIterable(mutableListOf(1,2,34,6,7,8))
+    }
+
+
+    private fun createRange(): Observable<Int>{
+        return Observable.range(40,10)
     }
 }
