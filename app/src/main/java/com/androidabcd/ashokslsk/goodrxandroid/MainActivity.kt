@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity() {
         createFromArray().subscribe{
                 arr-> Log.d("main","recieved array is"+Arrays.toString(arr))
         }
+
+        createFromIteratable().subscribe{
+            arr-> Log.d("mainitr", "recieved iterated data "+ arr)
+        }
     }
 
     private fun showJustJob(){
@@ -27,4 +31,7 @@ class MainActivity : AppCompatActivity() {
         return Observable.fromArray(arrayOf(1, 5, 7,9,11,13,15))
     }
 
+    private fun createFromIteratable(): Observable<Int>{
+        return Observable.fromIterable(mutableListOf(1,2,34,6,7,8))
+    }
 }

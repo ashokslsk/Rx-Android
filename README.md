@@ -97,3 +97,43 @@ class MainActivity : AppCompatActivity() {
 
 ```
 
+Similarly we can use fromIterable: 
+
+```kotlin
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        createFromArray().subscribe{
+                arr-> Log.d("main","recieved array is"+Arrays.toString(arr))
+        }
+
+        createFromIteratable().subscribe{
+            arr-> Log.d("mainitr", "recieved iterated data "+ arr)
+        }
+    }
+
+    private fun showJustJob(){
+
+    }
+
+    private fun createFromArray(): Observable<Array<Int>>{
+        return Observable.fromArray(arrayOf(1, 5, 7,9,11,13,15))
+    }
+
+    private fun createFromIteratable(): Observable<Int>{
+        return Observable.fromIterable(mutableListOf(1,2,34,6,7,8))
+    }
+}
+
+// output : 
+2019-07-28 12:23:00.168 4852-4852/com.androidabcd.ashokslsk.goodrxandroid D/mainitr: recieved iterated data 1
+2019-07-28 12:23:00.168 4852-4852/com.androidabcd.ashokslsk.goodrxandroid D/mainitr: recieved iterated data 2
+2019-07-28 12:23:00.168 4852-4852/com.androidabcd.ashokslsk.goodrxandroid D/mainitr: recieved iterated data 34
+2019-07-28 12:23:00.168 4852-4852/com.androidabcd.ashokslsk.goodrxandroid D/mainitr: recieved iterated data 6
+2019-07-28 12:23:00.168 4852-4852/com.androidabcd.ashokslsk.goodrxandroid D/mainitr: recieved iterated data 7
+2019-07-28 12:23:00.168 4852-4852/com.androidabcd.ashokslsk.goodrxandroid D/mainitr: recieved iterated data 8
+```
+
